@@ -9,3 +9,8 @@ black
 yapf
 python-gitlab
 twine
+getpass
+termcolor
+sys
+time
+numpy
