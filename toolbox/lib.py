@@ -6,6 +6,11 @@
 from os.path import split
 import pandas as pd
 import datetime
+import getpass
+from termcolor import colored
+import sys
+import time
+import numpy as np
 
 pd.set_option('display.width', 200)
 
@@ -46,6 +51,34 @@ def clean_data(data):
              7: '1/trimestre', 8: 'Less', 9: 'Never'}
     data.loc[:, 'Frequency'] = data['Frequency'].map(drows)
     return data
+
+
+def pokemon():
+    random_number = np.random.randint(0,2)
+    print('what pokemon are you')
+    pokemon = ['Pikachu','Charizard','Bulbasaur']
+    spinner = spinning_cursor()
+    for _ in range(20):
+        sys.stdout.write(next(spinner))
+        sys.stdout.flush()
+        time.sleep(0.1)
+        sys.stdout.write('\b')
+    name = getpass.getuser()
+    pokemon = pokemon[random_number]
+    colours = {'Pikachu':'yellow',
+               'Charizard':'red',
+               'Bulbasaur':'green'}
+    print(colored(f"{name} you're {pokemon}",colours[pokemon]))
+
+
+def spinning_cursor():
+    while True:
+        for cursor in '|/-\\':
+            yield cursor
+
+
+
+
 
 
 if __name__ == '__main__':
