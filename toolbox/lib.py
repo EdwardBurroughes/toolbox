@@ -52,7 +52,6 @@ def clean_data(data):
     data.loc[:, 'Frequency'] = data['Frequency'].map(drows)
     return data
 
-
 def pokemon():
     random_number = np.random.randint(0,2)
     print('what pokemon are you')
@@ -69,7 +68,6 @@ def pokemon():
                'Charizard':'red',
                'Bulbasaur':'green'}
     print(colored(f"{name} you're {pokemon}",colours[pokemon]))
-
 
 def spinning_cursor():
     while True:
